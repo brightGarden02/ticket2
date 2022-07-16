@@ -5,6 +5,11 @@ public class Ticket {
     private int amount;
     private int price;
 
+    public Ticket(int amount, int price) {
+        this.amount = amount;
+        this.price = price;
+    }
+
     public int getPrice() {
         return price;
     }

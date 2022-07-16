@@ -1,13 +1,9 @@
 package com.object1_ex1.ticket2;
 
-import java.util.List;
-
 public class Audience {
 
     private TicketOffice ticketOffice;
     private Bag bag;
-//    private Ticket ticket;
-    private List<Ticket> ticketList;
     private int money;
     private int hasTicketNumbers;
 
@@ -19,12 +15,11 @@ public class Audience {
         this.hasTicketNumbers = hasTicketNumbers;
     }
 
-    public Audience(TicketOffice ticketOffice, Bag bag, int tickets, List<Ticket> ticketList, int amount) {
+    public Audience(TicketOffice ticketOffice, Bag bag, int hasTicketNumbers, int money) {
         this.ticketOffice = ticketOffice;
         this.bag = bag;
-        this.hasTicketNumbers = tickets;
-        this.ticketList = ticketList;
-        this.money = amount;
+        this.hasTicketNumbers = hasTicketNumbers;
+        this.money = money;
     }
 
     public TicketOffice getTicketOffice() {
@@ -43,22 +38,6 @@ public class Audience {
         this.bag = bag;
     }
 
-//    public Ticket getTicket() {
-//        return ticket;
-//    }
-//
-//    public void setTicket(Ticket ticket) {
-//        this.ticket = ticket;
-//    }
-
-    public List<Ticket> getTicketList() {
-        return ticketList;
-    }
-
-    public void setTicketList(List<Ticket> ticketList) {
-        this.ticketList = ticketList;
-    }
-
     public int getMoney() {
         return money;
     }
@@ -67,12 +46,13 @@ public class Audience {
         this.money = money;
     }
 
+
+    public boolean hasTicket() {
+        return hasTicketNumbers != 0;
+    }
+
     //audience가 ticketOffice에 방문한다.
     public void enter(TicketOffice ticketOffice) {
 
-    }
-
-    public boolean hasTicket() {
-        return ticketList.size() != 0;
     }
 }

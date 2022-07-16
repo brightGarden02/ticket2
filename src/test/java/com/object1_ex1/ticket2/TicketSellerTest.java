@@ -1,12 +1,33 @@
 package com.object1_ex1.ticket2;
 
-public class TicketSeller {
+import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.Test;
 
-    private Ticket ticket;
+import java.util.List;
+
+import static org.springframework.test.util.AssertionErrors.assertTrue;
+
+
+public class TicketSellerTest {
+
 
     //audience가 ticket이 없고 교환권이 있으면 ticketSeller에게 ticket 교환을 시도한다.
-    public void invitationChangeToTicket(Audience audience) {
+    @Test
+    public void invitationChangeToTicket() {
 
+        //given
+        TicketOffice ticketOffice = new TicketOffice();
+         Bag bag = new Bag();
+         int hasTicketNumbers = 0;
+        int money = 5;
+
+        int ticketAmount = 2;
+        int ticketPrice = 1;
+        Ticket ticket = new Ticket(ticketAmount, ticketPrice);
+
+        Audience audience = new Audience(ticketOffice, bag, hasTicketNumbers, money);
+
+        //when
         if(audience.hasTicket()){
             if(ticket.getAmount() > 0){
 
@@ -30,15 +51,7 @@ public class TicketSeller {
             return;
         }
 
-    }
-
-
-    //audience가 ticket이 없고 교환권이 없으면 ticketSeller에게 ticket 구매를 시도한다.
-    // ticket 구매 돈이 있으면 ticket을 구매한다.
-    // ticket 구매할 돈이 없으면 ticket을 구매하지 못한다.
-    public void sell(boolean hasTicket) {
-
+        Assertions.assertThat(audience.getHasTicketNumbers()).isEqualTo(1);
 
     }
-
 }

@@ -1,6 +1,5 @@
 package com.object1_ex1.ticket2;
 
-import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
@@ -9,7 +8,17 @@ public class Ticket2Application {
 	public static void main(String[] args) {
 //		SpringApplication.run(Ticket2Application.class, args);
 
-		Audience audience = new Audience();
+		TicketOffice ticketOffice1 = new TicketOffice();
+		Bag bag1 = new Bag();
+		int hasTicketNumbers = 0;
+		int money = 5;
+
+		int ticketAmount = 2;
+		int ticketPrice = 1;
+		Ticket ticket = new Ticket(ticketAmount, ticketPrice);
+
+		Audience audience = new Audience(ticketOffice1, bag1, hasTicketNumbers, money);
+
 		TicketSeller ticketSeller = new TicketSeller();
 		TicketOffice ticketOffice = new TicketOffice();
 
@@ -21,7 +30,7 @@ public class Ticket2Application {
 
 
 		//audience가 ticket이 없고 교환권이 있으면 ticketSeller에게 ticket 교환을 시도한다.
-		ticketSeller.change(audience);
+		ticketSeller.invitationChangeToTicket(audience);
 
 
 		//audience가 ticket이 없고 교환권이 없으면 ticketSeller에게 ticket 구매를 시도한다.
