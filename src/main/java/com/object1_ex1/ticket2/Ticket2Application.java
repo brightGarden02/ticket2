@@ -21,7 +21,7 @@ public class Ticket2Application {
 
 
 		//audience가 ticket이 없고 교환권이 있으면 ticketSeller에게 ticket 교환을 시도한다.
-		ticketSeller.change(audience.hasTicket());
+		ticketSeller.change(audience);
 
 
 		//audience가 ticket이 없고 교환권이 없으면 ticketSeller에게 ticket 구매를 시도한다.
