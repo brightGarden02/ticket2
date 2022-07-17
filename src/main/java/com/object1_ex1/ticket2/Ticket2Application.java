@@ -8,19 +8,18 @@ public class Ticket2Application {
 	public static void main(String[] args) {
 //		SpringApplication.run(Ticket2Application.class, args);
 
-		TicketOffice ticketOffice1 = new TicketOffice();
+		int ticketAmount = 2;
+		int ticketPrice = 1;
+		Ticket ticket = new Ticket(ticketAmount, ticketPrice);
+		TicketOffice ticketOffice1 = new TicketOffice(ticket);
 		Bag bag1 = new Bag();
 		int hasTicketNumbers = 0;
 		int money = 5;
 
-		int ticketAmount = 2;
-		int ticketPrice = 1;
-		Ticket ticket = new Ticket(ticketAmount, ticketPrice);
-
 		Audience audience = new Audience(ticketOffice1, bag1, hasTicketNumbers, money);
 
-		TicketSeller ticketSeller = new TicketSeller();
-		TicketOffice ticketOffice = new TicketOffice();
+		TicketSeller ticketSeller = new TicketSeller(ticketOffice1);
+		TicketOffice ticketOffice = new TicketOffice(ticket);
 
 		//audience가 ticketOffice에 방문한다.
 		audience.enter(ticketOffice);
