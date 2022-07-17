@@ -5,12 +5,12 @@ public class TicketSeller {
     private Ticket ticket;
 
     // audience가 교환권이 있으면 ticketSeller에게 ticket 교환을 시도한다.
-    public void invitationChangeToTicket(Audience audience) {
+    public void changeInvitationToTicket(Audience audience) {
 
         if(audience.hasTicket()){
             if(ticket.getAmount() > 0){
 
-                changeInvitationToTicket(audience);
+                changeInvitation(audience);
             }
             else{
                 System.out.println("남아 있는 티켓이 없습니다.");
@@ -22,7 +22,7 @@ public class TicketSeller {
 
     }
 
-    private void changeInvitationToTicket(Audience audience) {
+    private void changeInvitation(Audience audience) {
 
         int leftTicket = ticket.getAmount();
         leftTicket--;

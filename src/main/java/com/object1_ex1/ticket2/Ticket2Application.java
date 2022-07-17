@@ -30,7 +30,7 @@ public class Ticket2Application {
 
 
 		// audience가 교환권이 있으면 ticketSeller에게 ticket 교환을 시도한다.
-		ticketSeller.invitationChangeToTicket(audience);
+		ticketSeller.changeInvitationToTicket(audience);
 
 
 		// audience가 교환권이 없으면 ticketSeller에게 ticket 구매를 시도한다.
