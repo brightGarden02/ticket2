@@ -51,6 +51,7 @@ public class TicketSellerTest {
             return;
         }
 
+        //then
         Assertions.assertThat(audience.getHasTicketNumbers()).isEqualTo(1);
 
     }
