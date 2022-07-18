@@ -31,11 +31,11 @@ public class TicketSeller {
 
         //TicketSeller가 ticketOffice에서 Ticket의 개수를 확인한다.
         Ticket ticket = ticketOffice.getTicket();
-        if(ticket.getAmount() > 0){
+        if(ticket.getTicketNumbers() > 0){
 
-            int leftTicket = ticket.getAmount();
+            int leftTicket = ticket.getTicketNumbers();
             leftTicket--;
-            ticket.setAmount(leftTicket);
+            ticket.setTicketNumbers(leftTicket);
 
             int audienceHasTickets = audience.getBag().getTicketNumbers();
             audienceHasTickets++;
@@ -55,9 +55,9 @@ public class TicketSeller {
 
         if(audience.getBag().getMoney() >= ticket.getPrice()){
 
-            int leftTicket = ticket.getAmount();
+            int leftTicket = ticket.getTicketNumbers();
             leftTicket--;
-            ticket.setAmount(leftTicket);
+            ticket.setTicketNumbers(leftTicket);
 
             int audienceHasMoney = audience.getBag().getMoney();
             audience.getBag().setMoney(audienceHasMoney - ticket.getPrice());
@@ -81,7 +81,7 @@ public class TicketSeller {
         //TicketSeller가 ticketOffice에서 Ticket의 개수를 확인한다.
         Ticket ticket = ticketOffice.getTicket();
 
-        if(ticket.getAmount() > 0){
+        if(ticket.getTicketNumbers() > 0){
             sellTicket(audience, ticket);
         }
         else{

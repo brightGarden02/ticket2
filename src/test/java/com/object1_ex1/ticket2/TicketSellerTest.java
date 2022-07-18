@@ -25,13 +25,13 @@ public class TicketSellerTest {
 
         //when
         if(audience.hasTicket()){
-            if(ticket.getAmount() > 0){
+            if(ticket.getTicketNumbers() > 0){
 
                 if(audience.getMoney() >= ticket.getPrice()){
 
-                    int leftTicket = ticket.getAmount();
+                    int leftTicket = ticket.getTicketNumbers();
                     leftTicket--;
-                    ticket.setAmount(leftTicket);
+                    ticket.setTicketNumbers(leftTicket);
 
                     int audienceHasTickets = audience.getTicketNumbers();
                     audienceHasTickets++;

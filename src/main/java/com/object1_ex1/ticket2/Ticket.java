@@ -7,11 +7,11 @@ package com.object1_ex1.ticket2;
  */
 public class Ticket {
 
-    private int amount;
+    private int ticketNumbers;
     private int price;
 
-    public Ticket(int amount, int price) {
-        this.amount = amount;
+    public Ticket(int ticketNumbers, int price) {
+        this.ticketNumbers = ticketNumbers;
         this.price = price;
     }
 
@@ -19,19 +19,15 @@ public class Ticket {
         return price;
     }
 
-    public void setPrice(int price) {
-        this.price = price;
+    public Ticket(int ticketNumbers) {
+        this.ticketNumbers = ticketNumbers;
     }
 
-    public Ticket(int amount) {
-        this.amount = amount;
+    public int getTicketNumbers() {
+        return ticketNumbers;
     }
 
-    public int getAmount() {
-        return amount;
-    }
-
-    public void setAmount(int amount) {
-        this.amount = amount;
+    public void setTicketNumbers(int ticketNumbers) {
+        this.ticketNumbers = ticketNumbers;
     }
 }

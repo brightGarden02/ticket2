@@ -1,5 +1,9 @@
 package com.object1_ex1.ticket2;
 
+/**
+ * Bag 클래스 역할
+ * 1. audience가 가지고 있는 돈, 초대장, 티켓수를 가지고 있다.
+ */
 public class Bag {
 
     private int money;

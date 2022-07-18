@@ -16,7 +16,7 @@ public class Ticket2Application {
 		int hasTicketNumbers = 0;
 		int money = 5;
 
-		Audience audience = new Audience(ticketOffice1, bag1, hasTicketNumbers, money);
+		Audience audience = new Audience(bag1);
 
 		TicketSeller ticketSeller = new TicketSeller(ticketOffice1);
 		TicketOffice ticketOffice = new TicketOffice(ticket);
