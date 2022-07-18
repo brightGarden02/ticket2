@@ -15,9 +15,4 @@ public class Audience {
         return bag;
     }
 
-
-    //audience가 ticketOffice에 방문한다.
-    public void enter(TicketOffice ticketOffice) {
-
-    }
 }
