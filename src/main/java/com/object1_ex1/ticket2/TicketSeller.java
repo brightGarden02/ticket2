@@ -21,7 +21,7 @@ public class TicketSeller {
             changeInvitationToTicket(audience);
         }
         else{ // audience가 교환권이 없으면
-              // ticketSeller가 audicence에게 ticket 판매를 시도한다.
+            // ticketSeller가 audicence에게 ticket 판매를 시도한다.
             noInvitationSellTicket(audience);
         }
 
@@ -61,7 +61,6 @@ public class TicketSeller {
 
             int audienceHasMoney = audience.getBag().getMoney();
             audience.getBag().setMoney(audienceHasMoney - ticket.getPrice());
-
 
 
             int audienceHasTickets = audience.getBag().getTicketNumbers();
