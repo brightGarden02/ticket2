@@ -1,5 +1,10 @@
 package com.object1_ex1.ticket2;
 
+/**
+ * TicketSeller 클래스 역할
+ * 1. TicketOffice에서 audience에게 ticket을 교환해준다.
+ * 2. TicketOffice에서 audience에게 ticket을 판매한다.
+ */
 public class TicketSeller {
     private TicketOffice ticketOffice;
     public TicketSeller(TicketOffice ticketOffice) {
@@ -7,11 +12,12 @@ public class TicketSeller {
     }
 
 
+    // TicketSeller는 audience가 invitation이 있는지 없는지 확인한다.
     public void hasInvitationOrNot(Audience audience) {
 
         // audience가 교환권이 있으면
         // ticketSeller가 audience에게 ticket 교환을 시도한다.
-        if(audience.hasTicket()){
+        if(audience.getBag().getTicketNumbers() > 0){
             changeInvitationToTicket(audience);
         }
         else{ // audience가 교환권이 없으면
@@ -31,9 +37,9 @@ public class TicketSeller {
             leftTicket--;
             ticket.setAmount(leftTicket);
 
-            int audienceHasTickets = audience.getTicketNumbers();
+            int audienceHasTickets = audience.getBag().getTicketNumbers();
             audienceHasTickets++;
-            audience.setHasTicketNumbers(audienceHasTickets);
+            audience.getBag().setTicketNumbers(audienceHasTickets);
         }
         else{
             System.out.println("남아 있는 티켓이 없습니다.");
@@ -46,18 +52,20 @@ public class TicketSeller {
     // ticket 구매할 돈이 없으면 ticket을 판매하지 못한다.
     private void sellTicket(Audience audience, Ticket ticket) {
 
-        if(audience.getMoney() >= ticket.getPrice()){
+
+        if(audience.getBag().getMoney() >= ticket.getPrice()){
 
             int leftTicket = ticket.getAmount();
             leftTicket--;
             ticket.setAmount(leftTicket);
 
-            int audienceHasMoney = audience.getMoney();
-            audience.setMoney(audienceHasMoney - ticket.getPrice());
+            int audienceHasMoney = audience.getBag().getMoney();
+            audience.getBag().setMoney(audienceHasMoney - ticket.getPrice());
 
-            int audienceHasTickets = audience.getTicketNumbers();
+
+            int audienceHasTickets = audience.getBag().getTicketNumbers();
             audienceHasTickets++;
-            audience.setHasTicketNumbers(audienceHasTickets);
+            audience.getBag().setTicketNumbers(audienceHasTickets);
         }
         else{
             System.out.println("audience가 ticket을 구매할 금액이 없습니다.");
