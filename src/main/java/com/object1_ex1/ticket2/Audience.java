@@ -7,7 +7,7 @@ public class Audience {
     private int money;
     private int hasTicketNumbers;
 
-    public int getHasTicketNumbers() {
+    public int getTicketNumbers() {
         return hasTicketNumbers;
     }
 

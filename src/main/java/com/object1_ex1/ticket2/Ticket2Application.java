@@ -29,14 +29,10 @@ public class Ticket2Application {
 
 
 		// audience가 교환권이 있으면 ticketSeller에게 ticket 교환을 시도한다.
-		ticketSeller.changeInvitationToTicket(audience);
-
-
 		// audience가 교환권이 없으면 ticketSeller에게 ticket 구매를 시도한다.
 		// ticket 구매 돈이 있으면 ticket을 구매한다.
 		// ticket 구매할 돈이 없으면 ticket을 구매하지 못한다.
-		ticketSeller.noInvitationSellTicket(audience);
-
+		ticketSeller.hasInvitationOrNot(audience);
 
 	}
 }

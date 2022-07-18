@@ -3,10 +3,6 @@ package com.object1_ex1.ticket2;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import java.util.List;
-
-import static org.springframework.test.util.AssertionErrors.assertTrue;
-
 
 public class TicketSellerTest {
 
@@ -37,7 +33,7 @@ public class TicketSellerTest {
                     leftTicket--;
                     ticket.setAmount(leftTicket);
 
-                    int audienceHasTickets = audience.getHasTicketNumbers();
+                    int audienceHasTickets = audience.getTicketNumbers();
                     audienceHasTickets++;
                     audience.setHasTicketNumbers(audienceHasTickets);
 
@@ -52,7 +48,7 @@ public class TicketSellerTest {
         }
 
         //then
-        Assertions.assertThat(audience.getHasTicketNumbers()).isEqualTo(1);
+        Assertions.assertThat(audience.getTicketNumbers()).isEqualTo(1);
 
     }
 }

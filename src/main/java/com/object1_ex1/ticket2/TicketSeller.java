@@ -1,52 +1,49 @@
 package com.object1_ex1.ticket2;
 
 public class TicketSeller {
-//    private Ticket ticket;
     private TicketOffice ticketOffice;
-
     public TicketSeller(TicketOffice ticketOffice) {
         this.ticketOffice = ticketOffice;
     }
 
-    // audience가 교환권이 있으면 ticketSeller에게 ticket 교환을 시도한다.
-    public void changeInvitationToTicket(Audience audience) {
 
+    public void hasInvitationOrNot(Audience audience) {
+
+        // audience가 교환권이 있으면
+        // ticketSeller가 audience에게 ticket 교환을 시도한다.
         if(audience.hasTicket()){
+            changeInvitationToTicket(audience);
+        }
+        else{ // audience가 교환권이 없으면
+              // ticketSeller가 audicence에게 ticket 판매를 시도한다.
+            noInvitationSellTicket(audience);
+        }
 
-            //TicketSeller가 ticketOffice에서 Ticket의 개수를 확인한다.
-            Ticket ticket = ticketOffice.getTicket();
+    }
 
-            if(ticket.getAmount() > 0){
+    private void changeInvitationToTicket(Audience audience) {
 
-                changeInvitation(audience, ticket);
-            }
-            else{
-                System.out.println("남아 있는 티켓이 없습니다.");
-            }
+        //TicketSeller가 ticketOffice에서 Ticket의 개수를 확인한다.
+        Ticket ticket = ticketOffice.getTicket();
+        if(ticket.getAmount() > 0){
+
+            int leftTicket = ticket.getAmount();
+            leftTicket--;
+            ticket.setAmount(leftTicket);
+
+            int audienceHasTickets = audience.getTicketNumbers();
+            audienceHasTickets++;
+            audience.setHasTicketNumbers(audienceHasTickets);
         }
         else{
-            return;
+            System.out.println("남아 있는 티켓이 없습니다.");
         }
 
     }
 
-    private void changeInvitation(Audience audience, Ticket ticket) {
 
-        int leftTicket = ticket.getAmount();
-        leftTicket--;
-        ticket.setAmount(leftTicket);
-
-        int audienceHasTickets = audience.getHasTicketNumbers();
-        audienceHasTickets++;
-        audience.setHasTicketNumbers(audienceHasTickets);
-
-    }
-
-
-
-    // audience가 교환권이 없으면 ticketSeller에게 ticket 구매를 시도한다.
-    // ticket 구매 돈이 있으면 ticket을 구매한다.
-    // ticket 구매할 돈이 없으면 ticket을 구매하지 못한다.
+    // audience가 ticket 구매 돈이 있으면 TicketSeller가 ticket을 판매한다.
+    // ticket 구매할 돈이 없으면 ticket을 판매하지 못한다.
     private void sellTicket(Audience audience, Ticket ticket) {
 
         if(audience.getMoney() >= ticket.getPrice()){
@@ -58,16 +55,20 @@ public class TicketSeller {
             int audienceHasMoney = audience.getMoney();
             audience.setMoney(audienceHasMoney - ticket.getPrice());
 
-            int audienceHasTickets = audience.getHasTicketNumbers();
+            int audienceHasTickets = audience.getTicketNumbers();
             audienceHasTickets++;
             audience.setHasTicketNumbers(audienceHasTickets);
+        }
+        else{
+            System.out.println("audience가 ticket을 구매할 금액이 없습니다.");
         }
 
     }
 
 
-    // audience가 교환권이 없으면 ticketSeller에게 ticket 구매를 시도한다.
-    public void noInvitationSellTicket(Audience audience) {
+    // audience가 교환권이 없으면
+    // ticketSeller가 audicence에게 ticket 판매를 시도한다.
+    private void noInvitationSellTicket(Audience audience) {
 
         //TicketSeller가 ticketOffice에서 Ticket의 개수를 확인한다.
         Ticket ticket = ticketOffice.getTicket();
