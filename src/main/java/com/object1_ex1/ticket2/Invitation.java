@@ -7,6 +7,5 @@ import java.time.LocalDateTime;
  * 1. 공연 관람할 수 있는 초대일자(when) 인스턴스 변수를 가진다.
  */
 public class Invitation {
-
     private LocalDateTime when;
 }

@@ -13,7 +13,6 @@ public class Bag {
 
 //    private Ticket ticket;
 
-
     public int getTicketNumbers() {
         return hasTicketNumbers;
     }

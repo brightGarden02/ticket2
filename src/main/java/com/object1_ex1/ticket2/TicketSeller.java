@@ -63,6 +63,7 @@ public class TicketSeller {
             audience.getBag().setMoney(audienceHasMoney - ticket.getPrice());
 
 
+
             int audienceHasTickets = audience.getBag().getTicketNumbers();
             audienceHasTickets++;
             audience.getBag().setTicketNumbers(audienceHasTickets);

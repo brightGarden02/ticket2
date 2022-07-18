@@ -10,7 +10,7 @@ public class Ticket2Application {
 
 		int ticketAmount = 2;
 		int ticketPrice = 1;
-		Ticket ticket = new Ticket(ticketAmount, ticketPrice);
+		Ticket ticket = new Ticket();
 		TicketOffice ticketOffice1 = new TicketOffice(ticket);
 		Bag bag1 = new Bag();
 		int hasTicketNumbers = 0;

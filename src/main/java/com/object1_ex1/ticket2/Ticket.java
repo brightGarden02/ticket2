@@ -10,17 +10,8 @@ public class Ticket {
     private int ticketNumbers;
     private int price;
 
-    public Ticket(int ticketNumbers, int price) {
-        this.ticketNumbers = ticketNumbers;
-        this.price = price;
-    }
-
     public int getPrice() {
         return price;
-    }
-
-    public Ticket(int ticketNumbers) {
-        this.ticketNumbers = ticketNumbers;
     }
 
     public int getTicketNumbers() {
