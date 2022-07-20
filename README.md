@@ -1,4 +1,4 @@
-# 공연 관람을 위한 Ticketing 코드입니다.
+## 공연 관람을 위한 Ticketing 코드입니다.
 
 #### [책: 오브젝트 코드로 이해하는 객체지향 설계, 저자 조영호님] 챕터1을 다루고 있습니다. 
 <br/>
@@ -11,8 +11,7 @@
 #### 5. audience가 invitation이 있으면 ticket과 교환해주고 invitation이 없으면 ticket을 판매한다.
 <br/><br/>
 
-##### 구성: 7개의 class.
-##### Audience, Bag, Invitation, Ticket, TicketSeller, TicketOffice, Theater
+##### 구성: 7개의 Class: Audience, Bag, Invitation, Ticket, TicketSeller, TicketOffice, Theater
 <br/>
 
 ##### 1) Audience 클래스 역할: 소지품을 보관하기 위한 가방(Bag)를 소지한다.
