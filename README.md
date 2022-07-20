@@ -11,7 +11,7 @@
 ### 5. audience가 invitation이 있으면 ticket과 교환해주고 invitation이 없으면 ticket을 판매한다.
 <br/><br/>
 
-### 구성: 7개의 Class: Audience, Bag, Invitation, Ticket, TicketSeller, TicketOffice, Theater
+### 7개의 Class: Audience, Bag, Invitation, Ticket, TicketSeller, TicketOffice, Theater
 #### 1. Audience 클래스 역할: 소지품을 보관하기 위한 가방(Bag)를 소지한다.
 #### 2. Bag 클래스 역할: audience가 가지고 있는 돈, 초대장, 티켓(ticket)을 가지고 있다.
 #### 3. Invitation 클래스 역할: 공연 관람할 수 있는 초대일자(when) 인스턴스 변수를 가진다.
