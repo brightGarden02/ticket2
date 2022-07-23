@@ -8,10 +8,15 @@ public class Bag {
 
     private int money;
     private Invitation invitation;
-
     private int hasTicketNumbers;
 
-//    private Ticket ticket;
+    public Bag(int money, Invitation invitation, int hasTicketNumbers) {
+        this.money = money;
+        this.invitation = invitation;
+        this.hasTicketNumbers = hasTicketNumbers;
+    }
+
+    //    private Ticket ticket;
 
     public int getTicketNumbers() {
         return hasTicketNumbers;
